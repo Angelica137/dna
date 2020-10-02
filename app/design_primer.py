@@ -1,3 +1,6 @@
+from app.constants import STRAND_MAPPING
+
+
 def design_primer_one(dna_region: str, primer_length: int):
 		"""
 		Design two primers for the reigion of interest in a given 
@@ -14,5 +17,10 @@ def design_primer_two(dna_region: str, primer_length: int):
 		dna sequence
 		"""
 
-		primer_two = dna_region[-primer_length:][::-1]
+		primer_two = ''
+		primer_prep = dna_region[-primer_length:][::-1]
+		for char in primer_prep:
+				for key, value in STRAND_MAPPING.items():
+						if char == key:
+								primer_two += value
 		return primer_two
