@@ -40,7 +40,3 @@ def melting_temp(primer: str):
 						count[char] = 1
 		return count
 
-
-primer = 'AAAA'
-
-print(melting_temp(primer))
