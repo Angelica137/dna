@@ -1,0 +1,33 @@
+openapi: "3.0.0"
+
+info:
+  title: Primer design API
+  version: "0.1"
+  description: API to help design primers
+
+paths:
+  /api/translate:
+    post:
+      tags: [Translate]
+      operationId: app.views.translate
+      summary: Translate a DNA sequence into a protein sequence
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dna_sequence:
+                  type: string
+                  example: "ACGGT"
+      responses:
+        200:
+          description: The translated protein sequence
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  protein_sequence:
+                    type: string
+                    example: "STWYFEQ"

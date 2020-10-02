@@ -1,0 +1,31 @@
+{
+    "scripts": {
+        "build": "webpack --config webpack.js",
+        "start": "webpack --config webpack.js --watch",
+        "lint": "eslint src/**/*.js src/**/*.jsx",
+        "prettier": "prettier --write ."
+    },
+    "dependencies": {
+        "@babel/core": "^7.11.4",
+        "@babel/preset-env": "^7.11.0",
+        "@babel/preset-react": "^7.10.4",
+        "@material-ui/core": "^4.11.0",
+        "@material-ui/icons": "^4.9.1",
+        "axios": "^0.20.0",
+        "babel-loader": "^8.1.0",
+        "copy-webpack-plugin": "^6.1.0",
+        "html-webpack-plugin": "^4.3.0",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-decorators": "^7.10.5",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^7.8.1",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-react": "^7.20.6",
+        "prettier": "2.1.2"
+    }
+}
