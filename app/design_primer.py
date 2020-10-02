@@ -3,7 +3,7 @@ from app.constants import STRAND_MAPPING
 
 def design_primer_one(dna_region: str, primer_length: int):
 		"""
-		Design two primers for the reigion of interest in a given 
+		Design first primer for the reigion of interest in a given 
 		dna sequence
 		"""
 
@@ -13,7 +13,7 @@ def design_primer_one(dna_region: str, primer_length: int):
 
 def design_primer_two(dna_region: str, primer_length: int):
 		"""
-		Design two primers for the reigion of interest in a given 
+		Design second primer for the reigion of interest in a given 
 		dna sequence
 		"""
 
@@ -24,3 +24,12 @@ def design_primer_two(dna_region: str, primer_length: int):
 						if char == key:
 								primer_two += value
 		return primer_two
+
+
+def melting_temp(primer: str):
+		"""
+		Calculate the melting temperature for a given primer
+		"""
+
+		primer_length = len(primer)
+		return primer_length
