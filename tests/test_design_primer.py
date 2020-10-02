@@ -17,5 +17,5 @@ class TestDesginPrimer(TestCase):
 
     def test_return_melting_temp(self):
         result = melting_temp('AACC')
-        expected = 4
+        expected = {'A': 2, 'C': 2}
         self.assertEqual(result, expected)
