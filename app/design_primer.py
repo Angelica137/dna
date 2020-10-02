@@ -45,5 +45,5 @@ def melting_temp(primer: str):
 		if primer_length < 14:
 				melting = 2 * (count.get('A') + count.get('T')) + 4 * (count.get('G') + count.get('C'))
 		elif primer_length >= 14:
-				melting = ((64.9 + 41) * (count.get('G') + count.get('C')) - 16.4) / (count.get('A') + count.get('T') + count.get('G') + count.get('C'))
-		return melting
+				melting = 64.9 + ((41 * (count.get('G') + count.get('C') - 16.4)) / (count.get('A') + count.get('T') + count.get('G') + count.get('C')))
+		return round(melting, 1)
