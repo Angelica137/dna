@@ -21,15 +21,15 @@ class TestTranslateDNA(TestCase):
 
     def test_translation_ends_at_stop_codon(self):
         result = translate_dna('acgTAGtc')
-        expected = 'T'
+        expected = 'T*'
         self.assertEqual(result, expected)
 
         result = translate_dna('TAA')
-        expected = ''
+        expected = '_'
         self.assertEqual(result, expected)
 
         result = translate_dna('ACGCACTATGAGTGA')
-        expected = 'THYE'
+        expected = 'THYE_'
         self.assertEqual(result, expected)
 
 
