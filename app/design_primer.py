@@ -32,4 +32,15 @@ def melting_temp(primer: str):
 		"""
 
 		primer_length = len(primer)
-		return primer_length
+		count = {}
+		for char in primer:
+				if char in count:
+						count[char] += 1
+				else:
+						count[char] = 1
+		return count
+
+
+primer = 'AAAA'
+
+print(melting_temp(primer))
