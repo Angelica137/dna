@@ -14,5 +14,5 @@ def design_primer_two(dna_region: str, primer_length: int):
 		dna sequence
 		"""
 
-		primer_two = dna_region[-primer_length:]
+		primer_two = dna_region[-primer_length:][::-1]
 		return primer_two
