@@ -32,11 +32,18 @@ def melting_temp(primer: str):
 		"""
 
 		primer_length = len(primer)
-		count = {}
+		count = {
+			'A': 0,
+			'T': 0,
+			'C': 0,
+			'G': 0
+		}
 		for char in primer:
 				if char in count:
 						count[char] += 1
-				else:
-						count[char] = 1
-		return count
-
+		
+		if primer_length < 14:
+				melting = 2 * (count.get('A') + count.get('T')) + 4 * (count.get('G') + count.get('C'))
+		elif primer_length >= 14:
+				melting = ((64.9 + 41) * (count.get('G') + count.get('C')) - 16.4) / (count.get('A') + count.get('T') + count.get('G') + count.get('C'))
+		return melting

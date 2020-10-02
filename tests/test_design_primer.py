@@ -22,5 +22,5 @@ class TestDesginPrimer(TestCase):
 
     def test_return_melting_temp_greater_14(self):
         result = melting_temp('ATAGGCTACATTGCA')
-        expected = 12
+        expected = 36.5
         self.assertEqual(result, expected)
