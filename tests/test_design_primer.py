@@ -15,7 +15,12 @@ class TestDesginPrimer(TestCase):
         expected = 'CAGC'
         self.assertEqual(result, expected)
 
-    def test_return_melting_temp(self):
+    def test_return_melting_temp_less_14(self):
         result = melting_temp('AACC')
-        expected = {'A': 2, 'C': 2}
+        expected = 12
+        self.assertEqual(result, expected)
+
+    def test_return_melting_temp_greater_14(self):
+        result = melting_temp('ATAGGCTACATTGCA')
+        expected = 12
         self.assertEqual(result, expected)
