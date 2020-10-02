@@ -13,6 +13,7 @@ def translate_dna(dna_sequence: str) -> str:
     dna_sequence = dna_sequence.upper()
     for i in range(0, len(dna_sequence), 3):
         codon = dna_sequence[i:i + 3]
+        print(codon)
         if len(codon) != 3:
             return protein_sequence
         try:
@@ -33,3 +34,4 @@ def is_valid_dna_sequence(sequence: str) -> bool:
         if nucleotide not in NUCLEOTIDES:
             return False
     return True
+
