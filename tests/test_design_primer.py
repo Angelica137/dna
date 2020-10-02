@@ -12,5 +12,5 @@ class TestDesginPrimer(TestCase):
 
     def test_return_primer_two(self):
         result = design_primer_two('GGCGAGGAGCTG', 4)
-        expected = 'GTCG'
+        expected = 'CAGC'
         self.assertEqual(result, expected)
