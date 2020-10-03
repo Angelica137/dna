@@ -35,5 +35,5 @@ class TestDesginPrimer(TestCase):
 
     def test_return_primer_one__temp_six_nucleotides(self):
         result = design_primer_one_temp('GGCGAGGAGCTG', 20, 25)
-        expected = 'GGCGAG'
+        expected = 22
         self.assertEqual(result, expected)

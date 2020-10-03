@@ -68,4 +68,4 @@ def design_primer_one_temp(dna_region: str, temp_one: int, temp_two: int):
     """
     primer_length = 6
     primer = dna_region[0: primer_length]
-    return primer
+    return melting_temp(primer)
