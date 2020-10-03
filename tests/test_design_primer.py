@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from app.design_primer import design_primer_one, design_primer_two, melting_temp, gen_primes
+from app.design_primer import design_primer_one, design_primer_two, melting_temp, gen_primes, design_primer_one_temp
 
 
 class TestDesginPrimer(TestCase):
