@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 
 import DNATranslator from '../components/DNATranslator';
+import PrimerDesign from '../components/PrimerDesign';
 
 const styles = (theme) => ({
     root: {
@@ -50,6 +51,7 @@ function Root(props) {
             </AppBar>
             <div className={classes.toolsContainer}>
                 <DNATranslator />
+                <PrimerDesign />
             </div>
         </div>
     );

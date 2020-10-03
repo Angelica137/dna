@@ -61,11 +61,36 @@ def gen_primes(dna_region: str, primer_length: int):
     return primers
 
 
-def design_primer_one_temp(dna_region: str, temp_one: int, temp_two: int):
+def design_primer_one_temp(dna_region: str, temp_low: int, temp_high: int):
     """
-    Design a group of primers using a temperatrure range gicen by the user
-    primers must be between 6 and 20 nucleotides.
+    Design a group of firs primers using a temperatrure range given by the user.
+    Primers must be between 6 and 20 nucleotides.
     """
-    primer_length = 6
-    primer = dna_region[0: primer_length]
-    return melting_temp(primer)
+    first_primers = {}
+    primer_length = list(range(6, 21))
+    for i in primer_length:
+        primer = dna_region[0: i]
+        melting_point = melting_temp(primer)
+        if (melting_point >= temp_low) and (melting_point <= temp_high):
+            first_primers[primer] = melting_point
+    return first_primers
+
+
+def design_primer_two_temp(dna_region: str, temp_low: int, temp_high: int):
+    """
+    Design a group of second primers using a temperatrure range given by the user.
+    Primers must be between 6 and 20 nucleotides.
+    """
+    second_primers = {}
+    primer_length = list(range(6, 21))
+    for i in primer_length:
+        primer_two = ''
+        primer_prep = dna_region[-i:][::-1]
+        for char in primer_prep:
+            for key, value in STRAND_MAPPING.items():
+                if char == key:
+                    primer_two += value
+        melting_point = melting_temp(primer_two)
+        if (melting_point >= temp_low) and (melting_point <= temp_high):
+            second_primers[primer_two] = melting_point
+    return second_primers

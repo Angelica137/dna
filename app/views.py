@@ -20,3 +20,19 @@ def translate():
         raise UnprocessableEntity(str(exception))
 
     return protein_sequence
+
+
+@design_tools_api.route('/primer', methods=['POST'])
+def primer():
+    data = request.json
+    dna_region = data['dna_region', 'primer_length']
+
+    if not is_valid_dna_region(dna_region):
+        raise UnprocessableEntity('DNA character not recognised')
+
+    try:
+        gen_primes = gen_primes(dna_region, primer_length)
+    except ValueError as exception:
+        raise UnprocessableEntity(str(exception))
+
+    return gen_primes
