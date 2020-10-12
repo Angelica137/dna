@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from werkzeug.exceptions import UnprocessableEntity
 
 from app.utils import translate_dna, is_valid_dna_sequence
+from app.design_primer import gen_primes
 
 design_tools_api = Blueprint('design-tools', __name__)
 
@@ -31,8 +32,8 @@ def primer():
         raise UnprocessableEntity('DNA character not recognised')
 
     try:
-        gen_primes = gen_primes(dna_region, primer_length)
+        generate_primes = gen_primes(dna_region, primer_length)
     except ValueError as exception:
         raise UnprocessableEntity(str(exception))
 
-    return gen_primes
+    return generate_primes
