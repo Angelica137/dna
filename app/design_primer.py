@@ -3,7 +3,7 @@ from app.constants import STRAND_MAPPING
 
 def design_primer_one(dna_region: str, primer_length: int):
     """
-    Design first primer for the reigion of interest in a given 
+    Design first primer for the reigion of interest in a given
     dna sequence and primer length.
     """
 
@@ -13,7 +13,7 @@ def design_primer_one(dna_region: str, primer_length: int):
 
 def design_primer_two(dna_region: str, primer_length: int):
     """
-    Design second primer for the reigion of interest in a given 
+    Design second primer for the reigion of interest in a given
     dna sequence and primer length.
     """
 
