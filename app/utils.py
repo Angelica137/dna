@@ -34,4 +34,3 @@ def is_valid_dna_sequence(sequence: str) -> bool:
         if nucleotide not in NUCLEOTIDES:
             return False
     return True
-
