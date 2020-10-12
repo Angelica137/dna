@@ -35,14 +35,17 @@ class PrimerDesign extends React.Component {
         };
     }
 
-    handleTextBoxChange = (event) => {
+    handleDnaRegionChange = (event) => {
         this.setState({
             dnaRegion: event.target.value.toUpperCase(),
-            primerLength: event.target.value,
-            proteinSequence: null,
-            resultsError: null,
         });
-    };
+		};
+		
+    handlePrimerLenghChange = (event) => {
+			this.setState({
+					primerLength: event.target.value,
+			});
+	};		
 
     submit = () => {
         axios
@@ -101,7 +104,7 @@ class PrimerDesign extends React.Component {
                     name="dnaRegion"
                     error={this.state.inputError}
                     className={classes.inputTextBox}
-                    onChange={this.handleTextBoxChange}
+                    onChange={this.handleDnaRegionChange}
                 />
                 <TextField
                     id="outlined-multiline-static"
@@ -111,7 +114,7 @@ class PrimerDesign extends React.Component {
                     name="primerLength"
                     error={this.state.inputError}
                     className={classes.inputTextBox}
-                    onChange={this.handleTextBoxChange}
+                    onChange={this.handlePrimerLenghChange}
                 />
                 <Button
                     variant="contained"

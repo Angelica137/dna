@@ -28,7 +28,7 @@ def primer():
     data = request.json
     dna_region = data['dna_region', 'primer_length']
 
-    if not is_valid_dna_region(dna_region):
+    if not is_valid_dna_sequence(dna_region):
         raise UnprocessableEntity('DNA character not recognised')
 
     try:
