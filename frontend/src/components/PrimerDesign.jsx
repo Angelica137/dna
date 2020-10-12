@@ -39,7 +39,13 @@ class PrimerDesign extends React.Component {
         this.setState({
             dnaRegion: event.target.value.toUpperCase(),
         });
-    };
+		};
+		
+    handlePrimerLenghChange = (event) => {
+			this.setState({
+					primerLength: event.target.value,
+			});
+	};		
 
     submit = () => {
         axios
@@ -108,7 +114,7 @@ class PrimerDesign extends React.Component {
                     name="primerLength"
                     error={this.state.inputError}
                     className={classes.inputTextBox}
-                    onChange={this.handleChange}
+                    onChange={this.handlePrimerLenghChange}
                 />
                 <Button
                     variant="contained"
