@@ -26,9 +26,9 @@ CODON_TO_AMINO_ACID = {
 
 NUCLEOTIDES = ['A', 'C', 'G', 'T']
 
-STRAND_MAPPING ={
-	'A': 'T',
-	'T': 'A',
-	'C': 'G',
-	'G': 'C'
-	}
+STRAND_MAPPING = {
+    'A': 'T',
+    'T': 'A',
+    'C': 'G',
+    'G': 'C'
+}
